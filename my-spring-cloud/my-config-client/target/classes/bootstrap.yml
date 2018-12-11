@@ -1,0 +1,9 @@
+#server:
+#  port: 8080
+#spring:
+#  application:
+#    name: my-config-client
+#  cloud:
+#    config:
+#      profile: dev
+#      uri: http://localhost:8280/

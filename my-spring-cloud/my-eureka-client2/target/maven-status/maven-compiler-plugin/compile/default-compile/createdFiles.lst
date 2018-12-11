@@ -1,0 +1,7 @@
+com\isen\eureka\client2\Application.class
+com\isen\eureka\client2\consumer\HelloConsumer2.class
+com\isen\eureka\client2\consumer\ProductService.class
+com\isen\eureka\client2\controller\ProductController.class
+com\isen\eureka\client2\consumer\ProductServiceFallback.class
+com\isen\eureka\client2\consumer\HelloConsumer.class
+com\isen\eureka\client2\controller\UserController.class

@@ -1,0 +1,11 @@
+server:
+  port: 9876
+
+spring:
+  application:
+    name: my-eureka-client
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9999/eureka/

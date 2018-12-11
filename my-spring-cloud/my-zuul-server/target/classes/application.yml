@@ -1,0 +1,44 @@
+server:
+  port: 9879
+
+spring:
+  application:
+    name: my-zuul-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9999/eureka/
+
+#zuul.routes.微服务Id = 指定路径
+
+#zuul.ignored-services=微服务Id1,微服务Id2..
+
+#zuul.routes.api-a.path=/api-a/**
+#zuul.routes.api-a.serviceId=service-A
+
+#zuul.routes.api-a.path=/api-a/**
+#zuul.routes.api-a.url=http://localhost:8080/api-a
+zuul:
+  routes:
+    my-user-server: /user/** #自定义微服务的访问路径，/user/*匹配一级路径，/user/**匹配所有以/user/开头的路径
+    myEurekaClient: #同时指定微服务Id和对应路径
+      path: /myEurekaClient/**
+      serviceId: my-eureka-client
+    myEurekaClient2: #同时指定微服务Url和对应路径,通过url配置的路由不会由HystrixCommand来执行，自然，也就得不到Ribbon的负载均衡、降级、断路器等功能。所以在实施尽量使用serviceId进行配置。
+      path: /myEurekaClientURL/**
+      url: http://localhost:9876
+#  ignored-services: my-eureka-client2,my-eureka-client #忽略指定微服务
+
+# 对指定路由开启自定义敏感头
+#zuul.routes.[route].customSensitiveHeaders=true
+#zuul.routes.[route].sensitiveHeaders=[这里设置要过滤的敏感头]
+
+#zuul.sensitiveHeaders=[这里设置要过滤的敏感头]
+
+# 启用Ribbon的RestClient
+#ribbon.restclient.enabled=true
+
+# 启用OkHttpClient
+#ribbon.okhttp.enabled=true
+
+

@@ -1,0 +1,10 @@
+#server:
+#  port: 2800
+#
+#spring:
+#  application:
+#    name: my-product-server-bus
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:9999/eureka/

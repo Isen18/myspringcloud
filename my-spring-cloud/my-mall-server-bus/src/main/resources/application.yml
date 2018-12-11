@@ -1,0 +1,14 @@
+logging:
+  config: classpath:log4j2.xml
+
+#server:
+#  port: 2700
+#
+#spring:
+#  application:
+#    name: my-mall-server-bus
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:9999/eureka/

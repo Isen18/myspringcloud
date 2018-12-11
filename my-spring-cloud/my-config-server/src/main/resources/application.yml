@@ -1,0 +1,18 @@
+server:
+  port: 8280
+spring:
+  application:
+    name: my-config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Isen18/my-spring-cloud-config.git
+#          username: git-username
+#          password: git-userpwd
+#          basedir: tmp/
+
+security:
+  user:
+    name: isen
+    password: isen123
